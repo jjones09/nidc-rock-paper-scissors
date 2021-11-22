@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Rock Paper Scissors
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A basic React app for playing Rock Paper Scissors against a 'bot' (AKA a random number between 0 and 2)
 
-## Available Scripts
+Powered by models generated from Google's Teachable Machine tool.
 
-In the project directory, you can run:
+## Built using
+* [React](https://github.com/facebook/react)
+* [react-webcam](https://github.com/mozmorris/react-webcam)
+* [Google's Teachable Machine](https://teachablemachine.withgoogle.com/)
+* ['Roshambo' icon set by Studio Fibonacci from the Noun Project](https://thenounproject.com/StudioFibonacci/collection/roshambo/)
 
-### `yarn start`
+## How to run
+(Requires `nodejs` and `npm`/`yarn`)
+1. Clone this repo
+2. Run `npm install`/`yarn` in root directory
+3. Create and download model from Teachable Machine (see below)
+4. Unzip the download file and place the contents in the `public/MODEL_DATA` directory
+5. Run `npm run start`/`yarn start` in the root directory and open a browser window at `localhost:3000`
+6. Have fun!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Creating a Model
+1. Go to `https://teachablemachine.withgoogle.com/`
+2. Select `Get Started` and then `Image Project > Standard Image Model`
+3. Create three classes, named `rock`, `paper`, and `scissors`
+4. For each class, do the following steps:
+    1. Select `webcam` to enable your cam feed
+    2. While doing the correct hand gesture for the class, hold the `Hold to Record` button down
+    3. Try moving your hand around a little while doing this to add some variance to the samples
+    4. Stop when you have enough samples (usually around 100 will work) and make sure that each class gets a roughly equal amount of sample images
+5. You're now ready to train, but feel free to expand the `Advanced` section and play around with some of the parameters
+6. Keep this tab open and focused until the model finishes training - with the standard params it will only take like 30 seconds (depending on the amount of pictures in each class)
+7. Once it's done training you can try your shiny new model out in the live preview and, when you're ready, click `Export Model`
+8. Stay on the `Tensorflow.js` tab, and pick the `Download` radio button and hit `Download my model`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Rules of 'Rock Paper Scissors'
+Well, when a rock really hates a pair of scissors...
+Nah, you know the rules.

@@ -1,0 +1,19 @@
+.Scoreboard {
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.Score-section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.Last-round-choice {
+  height: 100px;
+  width: 100px;
+  margin-top: 10px;
+}
