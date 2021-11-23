@@ -12,8 +12,7 @@ const countDownToPlay = async ({setCountdown}) => Promise.all(
   new Array(4).fill().map(
     async (_, index) => new Promise(resolve => {
       setTimeout(
-        () => { 
-          console.log(index);
+        () => {
           setCountdown(index);
           resolve();
         }, 
@@ -24,7 +23,7 @@ const countDownToPlay = async ({setCountdown}) => Promise.all(
 );
 
 // Pick a random choice for the bot
-const getBotGuess = (classLabels) => classLabels[Math.floor(Math.random() * 3)];
+const getBotChoice = (classLabels) => classLabels[Math.floor(Math.random() * 3)];
 
 // Score the round
 const determineRoundScore = (playerChoice, botChoice, classes) => {
@@ -67,12 +66,12 @@ const playMatch = ({
   console.log(`Player chose: ${playerChoice}`);
 
   // Get bot choice
-  const botChoice = getBotGuess(classLabels);
+  const botChoice = getBotChoice(classLabels);
   console.log(`Bot chose: ${botChoice}`);
 
   // Determine round winner
   const score = determineRoundScore(playerChoice, botChoice, classLabels);
-  console.log(score);
+  console.log(`Round score is: ${score}`);
 
   // Update the scores
   if (score === -1) setBotScore(botScore + 1);

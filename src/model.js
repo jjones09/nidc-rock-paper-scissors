@@ -7,6 +7,7 @@ export const init = async () => {
     `${process.env.PUBLIC_URL}/MODEL_DATA/model.json`,
     `${process.env.PUBLIC_URL}/MODEL_DATA/metadata.json`,
   );
+  console.log('Model loaded');
 };
 
 export const getPrediction = async input => {
@@ -14,6 +15,8 @@ export const getPrediction = async input => {
   prediction.sort(
     (a, b) => b.probability - a.probability
   );
+  console.log('Predictions');
+  console.log(prediction);
   return prediction[0].className;
 }
 
